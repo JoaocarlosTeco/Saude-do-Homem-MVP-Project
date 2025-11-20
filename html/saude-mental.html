@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saúde Mental - Health On Time</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <div class="logo-icon-wrapper">
+              <img src="logo.png" alt="Logo" class="logo-image" />
+            </div>
+            <div class="logo-text">
+              <h1>Health On Time</h1>
+              <p class="logo-subtitle">Saúde Preventiva</p>
+            </div>
+          </div>
+          <button
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            onclick="toggleSidebar()"
+          >
+            ☰
+          </button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">🏠 Dashboard</a></li>
+            <li><a href="chat.html" class="nav-link">💬 Chat Saúde</a></li>
+            <li><a href="localizar.html" class="nav-link">📍 Localizar</a></li>
+            <li><a href="educacao.html" class="nav-link">📚 Educação</a></li>
+            <li>
+              <a href="pontos-coleta.html" class="nav-link"
+                >♻️ Pontos de Coleta</a
+              >
+            </li>
+            <li><a href="exames.html" class="nav-link">📅 Exames</a></li>
+            <li>
+              <a href="atividades.html" class="nav-link">🏃 Atividades</a>
+            </li>
+            <li>
+              <a href="saude-mental.html" class="nav-link active"
+                >❤️ Saúde Mental</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p class="sidebar-footer-text">
+            Cuidando da sua saúde e do meio ambiente
+          </p>
+          <div class="sidebar-status">
+            <span class="status-dot"></span>
+            <span>Sistema online</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-wrapper">
+        <main class="main-content">
+          <div class="page-header">
+            <h1>Saúde Mental</h1>
+            <p>
+              Espaço seguro para diálogo, reflexão e cuidado com o bem-estar
+              mental
+            </p>
+          </div>
+
+          <div class="card">
+            <div
+              class="info-banner"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(14, 165, 233, 0.1),
+                  rgba(37, 99, 235, 0.1)
+                );
+                border-left: 4px solid var(--info-color);
+              "
+            >
+              <h3>💙 Você não está sozinho</h3>
+              <p>
+                Cuide da sua saúde mental. Buscar ajuda é um sinal de força, não
+                de fraqueza. Este espaço oferece recursos e informações para seu
+                bem-estar emocional.
+              </p>
+            </div>
+          </div>
+
+          <div class="resources-grid">
+            <div class="resource-card">
+              <div
+                class="resource-icon"
+                style="background: rgba(14, 165, 233, 0.15); color: #0ea5e9"
+              >
+                🧘
+              </div>
+              <h3>Técnicas de Relaxamento</h3>
+              <p>
+                Exercícios de respiração, meditação e mindfulness para reduzir o
+                estresse e ansiedade.
+              </p>
+              <button
+                class="btn btn-primary"
+                onclick="mostrarTecnicasRelaxamento()"
+              >
+                Acessar
+              </button>
+            </div>
+
+            <div class="resource-card">
+              <div
+                class="resource-icon"
+                style="background: rgba(16, 185, 129, 0.15); color: #10b981"
+              >
+                📚
+              </div>
+              <h3>Artigos e Leituras</h3>
+              <p>
+                Conteúdo sobre saúde mental masculina, gerenciamento de estresse
+                e bem-estar emocional.
+              </p>
+              <button
+                class="btn btn-primary"
+                onclick="mostrarArtigos()"
+              >
+                Acessar
+              </button>
+            </div>
+
+            <div class="resource-card">
+              <div
+                class="resource-icon"
+                style="background: rgba(249, 115, 22, 0.15); color: #f97316"
+              >
+                🎯
+              </div>
+              <h3>Metas e Acompanhamento</h3>
+              <p>
+                Defina metas de bem-estar mental e acompanhe seu progresso ao
+                longo do tempo.
+              </p>
+              <button
+                class="btn btn-primary"
+                onclick="mostrarMetas()"
+              >
+                Acessar
+              </button>
+            </div>
+
+            <div class="resource-card">
+              <div
+                class="resource-icon"
+                style="background: rgba(37, 99, 235, 0.15); color: #2563eb"
+              >
+                🤝
+              </div>
+              <h3>Buscar Ajuda Profissional</h3>
+              <p>
+                Encontre psicólogos e profissionais de saúde mental próximos a
+                você.
+              </p>
+              <a href="localizar.html" class="btn btn-primary">Buscar</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">Dicas de Bem-Estar Mental</h2>
+            <div class="tips-list">
+              <div class="tip-item">
+                <div class="tip-icon">💤</div>
+                <div class="tip-content">
+                  <h4>Durma bem</h4>
+                  <p>
+                    Priorize 7-9 horas de sono por noite. O sono adequado é
+                    fundamental para a saúde mental.
+                  </p>
+                </div>
+              </div>
+              <div class="tip-item">
+                <div class="tip-icon">🏃</div>
+                <div class="tip-content">
+                  <h4>Exercite-se regularmente</h4>
+                  <p>
+                    A atividade física libera endorfinas e ajuda a reduzir
+                    ansiedade e depressão.
+                  </p>
+                </div>
+              </div>
+              <div class="tip-item">
+                <div class="tip-icon">👥</div>
+                <div class="tip-content">
+                  <h4>Mantenha conexões sociais</h4>
+                  <p>
+                    Relacionamentos saudáveis são essenciais para o bem-estar
+                    emocional.
+                  </p>
+                </div>
+              </div>
+              <div class="tip-item">
+                <div class="tip-icon">🎨</div>
+                <div class="tip-content">
+                  <h4>Tenha hobbies</h4>
+                  <p>
+                    Atividades que você gosta ajudam a reduzir o estresse e
+                    aumentam a satisfação.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("sidebar-open");
+      }
+
+      function mostrarTecnicasRelaxamento() {
+        const conteudo = `
+🧘 TÉCNICAS DE RELAXAMENTO
+
+1. RESPIRAÇÃO 4-7-8:
+   • Inspire pelo nariz contando até 4
+   • Segure a respiração contando até 7
+   • Expire pela boca contando até 8
+   • Repita 4 vezes
+
+2. RELAXAMENTO MUSCULAR PROGRESSIVO:
+   • Tense e relaxe cada grupo muscular
+   • Comece pelos pés e vá subindo
+   • Mantenha a tensão por 5 segundos
+   • Relaxe por 10 segundos
+
+3. MINDFULNESS:
+   • Sente-se confortavelmente
+   • Foque na respiração
+   • Quando a mente divagar, volte ao foco
+   • Pratique por 10-15 minutos diários
+
+4. VISUALIZAÇÃO GUIADA:
+   • Feche os olhos
+   • Imagine um lugar tranquilo
+   • Use todos os sentidos na visualização
+   • Permaneça por 5-10 minutos
+        `.trim();
+
+        if (confirm(conteudo + "\n\nDeseja salvar estas técnicas?")) {
+          localStorage.setItem('tecnicasRelaxamento', 'visualizadas');
+          alert('Técnicas salvas! Você pode acessá-las novamente a qualquer momento.');
+        }
+      }
+
+      function mostrarArtigos() {
+        const artigos = [
+          {
+            titulo: "Saúde Mental Masculina: Quebrando Tabus",
+            resumo: "A importância de cuidar da saúde mental e buscar ajuda profissional quando necessário."
+          },
+          {
+            titulo: "Gerenciamento de Estresse no Dia a Dia",
+            resumo: "Técnicas práticas para reduzir o estresse e melhorar a qualidade de vida."
+          },
+          {
+            titulo: "Depressão em Homens: Sinais e Sintomas",
+            resumo: "Reconhecer os sinais de depressão e a importância do tratamento adequado."
+          },
+          {
+            titulo: "Ansiedade: Como Lidar e Tratar",
+            resumo: "Estratégias para gerenciar a ansiedade e quando buscar ajuda profissional."
+          }
+        ];
+
+        const lista = artigos.map((artigo, index) => 
+          `${index + 1}. ${artigo.titulo}\n   ${artigo.resumo}`
+        ).join('\n\n');
+
+        alert(`📚 ARTIGOS DISPONÍVEIS\n\n${lista}\n\nEm breve você terá acesso ao conteúdo completo de cada artigo!`);
+      }
+
+      function mostrarMetas() {
+        let metas = JSON.parse(localStorage.getItem('metasSaudeMental')) || [];
+        
+        if (metas.length === 0) {
+          const novaMeta = prompt('🎯 Defina uma meta de bem-estar mental:\n\nExemplos:\n- Meditar 10 minutos por dia\n- Dormir 8 horas por noite\n- Fazer exercícios 3x por semana\n- Conversar com amigos semanalmente');
+          
+          if (novaMeta && novaMeta.trim()) {
+            metas.push({
+              id: Date.now(),
+              meta: novaMeta.trim(),
+              data: new Date().toLocaleDateString('pt-BR'),
+              concluida: false
+            });
+            localStorage.setItem('metasSaudeMental', JSON.stringify(metas));
+            alert('✅ Meta salva com sucesso!');
+          }
+        } else {
+          const listaMetas = metas.map((meta, index) => 
+            `${index + 1}. ${meta.concluida ? '✅' : '⏳'} ${meta.meta}\n   Criada em: ${meta.data}`
+          ).join('\n\n');
+          
+          const acao = confirm(`🎯 SUAS METAS DE BEM-ESTAR\n\n${listaMetas}\n\n\nClique OK para adicionar nova meta ou Cancelar para fechar.`);
+          
+          if (acao) {
+            const novaMeta = prompt('Defina uma nova meta:');
+            if (novaMeta && novaMeta.trim()) {
+              metas.push({
+                id: Date.now(),
+                meta: novaMeta.trim(),
+                data: new Date().toLocaleDateString('pt-BR'),
+                concluida: false
+              });
+              localStorage.setItem('metasSaudeMental', JSON.stringify(metas));
+              alert('✅ Nova meta salva!');
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

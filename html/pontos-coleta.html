@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pontos de Coleta - Health On Time</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <div class="logo-icon-wrapper">
+              <img src="logo.png" alt="Logo" class="logo-image" />
+            </div>
+            <div class="logo-text">
+              <h1>Health On Time</h1>
+              <p class="logo-subtitle">Saúde Preventiva</p>
+            </div>
+          </div>
+          <button
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            onclick="toggleSidebar()"
+          >
+            ☰
+          </button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">🏠 Dashboard</a></li>
+            <li><a href="chat.html" class="nav-link">💬 Chat Saúde</a></li>
+            <li><a href="localizar.html" class="nav-link">📍 Localizar</a></li>
+            <li><a href="educacao.html" class="nav-link">📚 Educação</a></li>
+            <li>
+              <a href="pontos-coleta.html" class="nav-link active"
+                >♻️ Pontos de Coleta</a
+              >
+            </li>
+            <li><a href="exames.html" class="nav-link">📅 Exames</a></li>
+            <li>
+              <a href="atividades.html" class="nav-link">🏃 Atividades</a>
+            </li>
+            <li>
+              <a href="saude-mental.html" class="nav-link">❤️ Saúde Mental</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p class="sidebar-footer-text">
+            Cuidando da sua saúde e do meio ambiente
+          </p>
+          <div class="sidebar-status">
+            <span class="status-dot"></span>
+            <span>Sistema online</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-wrapper">
+        <main class="main-content">
+          <div class="page-header">
+            <h1>Pontos de Coleta</h1>
+            <p>
+              Encontre locais para descarte correto de medicamentos e materiais
+              de saúde
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="info-banner">
+              <h3>⚠️ Importante</h3>
+              <p>
+                Nunca descarte medicamentos no lixo comum ou no vaso sanitário.
+                Use os pontos de coleta adequados para proteger o meio ambiente
+                e a saúde pública.
+              </p>
+            </div>
+          </div>
+
+          <div class="locations-grid">
+            <div class="location-card">
+              <div class="location-header">
+                <h3>Farmácia Pague Menos</h3>
+                <span class="badge badge-success">Ativo</span>
+              </div>
+              <div class="location-info">
+                <p>📍 Av. Augusto Franco, 2400 - Siqueira Campos, Aracaju-SE</p>
+                <p>📞 (79) 3214-7890</p>
+                <p>🕐 Seg-Sab: 8h às 20h | Dom: 9h às 18h</p>
+                <p>✅ Aceita: Medicamentos vencidos, embalagens vazias</p>
+              </div>
+              <button
+                class="btn btn-primary"
+                style="width: 100%; margin-top: 1rem"
+                onclick="verNoMapa('Av. Augusto Franco, 2400 - Siqueira Campos, Aracaju-SE')"
+              >
+                Ver no Mapa
+              </button>
+            </div>
+
+            <div class="location-card">
+              <div class="location-header">
+                <h3>UBS Siqueira Campos</h3>
+                <span class="badge badge-success">Ativo</span>
+              </div>
+              <div class="location-info">
+                <p>📍 Rua Itabaianinha, 380 - Siqueira Campos, Aracaju-SE</p>
+                <p>📞 (79) 3218-2345</p>
+                <p>🕐 Seg-Sex: 7h às 17h</p>
+                <p>✅ Aceita: Medicamentos, seringas, agulhas</p>
+              </div>
+              <button
+                class="btn btn-primary"
+                style="width: 100%; margin-top: 1rem"
+                onclick="verNoMapa('Rua Itabaianinha, 380 - Siqueira Campos, Aracaju-SE')"
+              >
+                Ver no Mapa
+              </button>
+            </div>
+
+            <div class="location-card">
+              <div class="location-header">
+                <h3>Farmácia Drogasil</h3>
+                <span class="badge badge-success">Ativo</span>
+              </div>
+              <div class="location-info">
+                <p>📍 Av. Augusto Franco, 2200 - Siqueira Campos, Aracaju-SE</p>
+                <p>📞 (79) 3221-5678</p>
+                <p>🕐 Diariamente: 7h às 23h</p>
+                <p>✅ Aceita: Medicamentos, embalagens</p>
+              </div>
+              <button
+                class="btn btn-primary"
+                style="width: 100%; margin-top: 1rem"
+                onclick="verNoMapa('Av. Augusto Franco, 2200 - Siqueira Campos, Aracaju-SE')"
+              >
+                Ver no Mapa
+              </button>
+            </div>
+
+            <div class="location-card">
+              <div class="location-header">
+                <h3>Farmácia Popular do Brasil</h3>
+                <span class="badge badge-success">Ativo</span>
+              </div>
+              <div class="location-info">
+                <p>📍 Av. Augusto Franco, 2600 - Siqueira Campos, Aracaju-SE</p>
+                <p>📞 (79) 3234-9012</p>
+                <p>🕐 Seg-Sab: 8h às 22h</p>
+                <p>✅ Aceita: Medicamentos vencidos</p>
+              </div>
+              <button
+                class="btn btn-primary"
+                style="width: 100%; margin-top: 1rem"
+                onclick="verNoMapa('Av. Augusto Franco, 2600 - Siqueira Campos, Aracaju-SE')"
+              >
+                Ver no Mapa
+              </button>
+            </div>
+
+            <div class="location-card">
+              <div class="location-header">
+                <h3>Farmácia Raia</h3>
+                <span class="badge badge-success">Ativo</span>
+              </div>
+              <div class="location-info">
+                <p>📍 Av. Augusto Franco, 2000 - Siqueira Campos, Aracaju-SE</p>
+                <p>📞 (79) 3212-3456</p>
+                <p>🕐 Seg-Sab: 7h às 22h | Dom: 8h às 20h</p>
+                <p>✅ Aceita: Medicamentos, embalagens vazias</p>
+              </div>
+              <button
+                class="btn btn-primary"
+                style="width: 100%; margin-top: 1rem"
+                onclick="verNoMapa('Av. Augusto Franco, 2000 - Siqueira Campos, Aracaju-SE')"
+              >
+                Ver no Mapa
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("sidebar-open");
+      }
+
+      function verNoMapa(endereco) {
+        const enderecoFormatado = encodeURIComponent(endereco);
+        window.open(
+          `https://www.google.com/maps/search/?api=1&query=${enderecoFormatado}`,
+          "_blank"
+        );
+      }
+    </script>
+  </body>
+</html>

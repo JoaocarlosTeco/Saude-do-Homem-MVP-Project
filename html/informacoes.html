@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informações - Health On Time</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <div class="logo-icon-wrapper">
+              <img src="logo.png" alt="Logo" class="logo-image" />
+            </div>
+            <div class="logo-text">
+              <h1>Health On Time</h1>
+              <p class="logo-subtitle">Saúde Preventiva</p>
+            </div>
+          </div>
+          <button
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            onclick="toggleSidebar()"
+          >
+            ☰
+          </button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">🏠 Dashboard</a></li>
+            <li><a href="chat.html" class="nav-link">💬 Chat Saúde</a></li>
+            <li><a href="localizar.html" class="nav-link">📍 Localizar</a></li>
+            <li><a href="educacao.html" class="nav-link">📚 Educação</a></li>
+            <li>
+              <a href="pontos-coleta.html" class="nav-link"
+                >♻️ Pontos de Coleta</a
+              >
+            </li>
+            <li><a href="exames.html" class="nav-link">📅 Exames</a></li>
+            <li>
+              <a href="atividades.html" class="nav-link">🏃 Atividades</a>
+            </li>
+            <li>
+              <a href="saude-mental.html" class="nav-link">❤️ Saúde Mental</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p class="sidebar-footer-text">
+            Cuidando da sua saúde e do meio ambiente
+          </p>
+          <div class="sidebar-status">
+            <span class="status-dot"></span>
+            <span>Sistema online</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-wrapper">
+        <main class="main-content">
+          <div class="page-header">
+            <h1>Informações sobre Saúde Masculina</h1>
+            <p>Conteúdo educativo sobre prevenção, cuidados e bem-estar</p>
+          </div>
+
+          <div class="info-categories">
+            <div class="info-category-card" onclick="showCategory('prevencao')">
+              <div
+                class="category-icon"
+                style="background: rgba(37, 99, 235, 0.15); color: #2563eb"
+              >
+                🛡️
+              </div>
+              <h3>Prevenção</h3>
+              <p>Exames e cuidados preventivos essenciais</p>
+            </div>
+            <div class="info-category-card" onclick="showCategory('doencas')">
+              <div
+                class="category-icon"
+                style="background: rgba(239, 68, 68, 0.15); color: #ef4444"
+              >
+                ⚕️
+              </div>
+              <h3>Doenças Comuns</h3>
+              <p>Informações sobre condições de saúde masculina</p>
+            </div>
+            <div class="info-category-card" onclick="showCategory('nutricao')">
+              <div
+                class="category-icon"
+                style="background: rgba(16, 185, 129, 0.15); color: #10b981"
+              >
+                🥗
+              </div>
+              <h3>Nutrição</h3>
+              <p>Alimentação saudável para homens</p>
+            </div>
+            <div class="info-category-card" onclick="showCategory('exercicio')">
+              <div
+                class="category-icon"
+                style="background: rgba(249, 115, 22, 0.15); color: #f97316"
+              >
+                💪
+              </div>
+              <h3>Exercícios</h3>
+              <p>Atividades físicas e condicionamento</p>
+            </div>
+          </div>
+
+          <div class="card" id="contentCard" style="display: none">
+            <div id="contentArea"></div>
+          </div>
+
+          <div class="card">
+            <h2 class="card-title">Artigos em Destaque</h2>
+            <div class="articles-list">
+              <div class="article-item">
+                <h3>Check-up Anual: Por que é importante?</h3>
+                <p>
+                  O check-up anual é fundamental para detectar problemas de
+                  saúde precocemente. Saiba quais exames são essenciais para
+                  homens de diferentes idades.
+                </p>
+                <button
+                  class="btn btn-secondary"
+                  onclick="lerArtigo(this.closest('.article-item').querySelector('h3').textContent)"
+                >
+                  Ler mais →
+                </button>
+              </div>
+              <div class="article-item">
+                <h3>Câncer de Próstata: Prevenção e Detecção</h3>
+                <p>
+                  Informações sobre o câncer de próstata, fatores de risco,
+                  sintomas e importância do exame de PSA e toque retal.
+                </p>
+                <button
+                  class="btn btn-secondary"
+                  onclick="lerArtigo(this.closest('.article-item').querySelector('h3').textContent)"
+                >
+                  Ler mais →
+                </button>
+              </div>
+              <div class="article-item">
+                <h3>Saúde Mental Masculina: Quebrando Tabus</h3>
+                <p>
+                  A importância de cuidar da saúde mental, reconhecer sinais de
+                  depressão e ansiedade, e buscar ajuda profissional.
+                </p>
+                <button
+                  class="btn btn-secondary"
+                  onclick="lerArtigo(this.closest('.article-item').querySelector('h3').textContent)"
+                >
+                  Ler mais →
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("sidebar-open");
+      }
+
+      function showCategory(category) {
+        const contentCard = document.getElementById("contentCard");
+        const contentArea = document.getElementById("contentArea");
+
+        const contents = {
+          prevencao: {
+            title: "Prevenção",
+            text: "A prevenção é a melhor forma de cuidar da saúde. Exames regulares, hábitos saudáveis e atenção aos sinais do corpo são fundamentais.",
+            detalhes:
+              "• Faça check-up anual a partir dos 40 anos\n• Mantenha vacinação em dia\n• Pratique exercícios regularmente\n• Alimente-se de forma balanceada\n• Evite tabagismo e consumo excessivo de álcool\n• Gerencie o estresse adequadamente",
+          },
+          doencas: {
+            title: "Doenças Comuns",
+            text: "Conheça as principais condições que afetam a saúde masculina e como preveni-las.",
+            detalhes:
+              "• Câncer de Próstata: Exame PSA e toque retal anuais após 50 anos\n• Doenças Cardiovasculares: Controle pressão arterial e colesterol\n• Diabetes: Monitore glicemia regularmente\n• Hipertensão: Aferição de pressão regular\n• Disfunção Erétil: Pode indicar problemas cardiovasculares",
+          },
+          nutricao: {
+            title: "Nutrição",
+            text: "Uma alimentação balanceada é essencial para manter a saúde e prevenir doenças.",
+            detalhes:
+              "• Consuma frutas e verduras diariamente\n• Prefira carnes magras e peixes\n• Reduza açúcar e alimentos processados\n• Beba água regularmente (2-3 litros/dia)\n• Evite excesso de sal\n• Mantenha horários regulares de refeição",
+          },
+          exercicio: {
+            title: "Exercícios",
+            text: "A atividade física regular fortalece o corpo, melhora a saúde cardiovascular e o bem-estar mental.",
+            detalhes:
+              "• Pratique pelo menos 150 minutos de exercício moderado por semana\n• Combine exercícios aeróbicos e de força\n• Alongue-se antes e depois dos treinos\n• Hidrate-se durante a atividade física\n• Respeite seus limites e evite sobrecarga\n• Consulte um médico antes de iniciar atividades intensas",
+          },
+        };
+
+        contentArea.innerHTML = `
+          <h2 style="margin-bottom: 1rem; color: var(--primary-color);">${contents[category].title}</h2>
+          <p style="margin-bottom: 1.5rem; font-size: 1.125rem; line-height: 1.8;">${contents[category].text}</p>
+          <div style="background: var(--bg-lighter); padding: 1.5rem; border-radius: var(--radius-lg); border-left: 4px solid var(--primary-color);">
+            <h3 style="margin-bottom: 1rem; font-size: 1.125rem;">Dicas Importantes:</h3>
+            <pre style="white-space: pre-wrap; font-family: inherit; margin: 0; color: var(--text-secondary); line-height: 1.8;">${contents[category].detalhes}</pre>
+          </div>
+        `;
+        contentCard.style.display = "block";
+        contentCard.scrollIntoView({ behavior: "smooth" });
+      }
+
+      function lerArtigo(titulo) {
+        alert(
+          `Artigo: ${titulo}\n\nEste artigo está em desenvolvimento. Em breve você terá acesso ao conteúdo completo!`
+        );
+      }
+    </script>
+  </body>
+</html>
