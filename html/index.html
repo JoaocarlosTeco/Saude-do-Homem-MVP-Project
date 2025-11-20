@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Health On Time</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <div class="logo-icon-wrapper">
+              <img src="logo.png" alt="Logo" class="logo-image" />
+            </div>
+            <div class="logo-text">
+              <h1>Health On Time</h1>
+              <p class="logo-subtitle">Saúde Preventiva</p>
+            </div>
+          </div>
+          <button
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            onclick="toggleSidebar()"
+          >
+            ☰
+          </button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            <li>
+              <a href="index.html" class="nav-link active">🏠 Dashboard</a>
+            </li>
+            <li><a href="chat.html" class="nav-link">💬 Chat Saúde</a></li>
+            <li><a href="localizar.html" class="nav-link">📍 Localizar</a></li>
+            <li><a href="educacao.html" class="nav-link">📚 Educação</a></li>
+            <li>
+              <a href="pontos-coleta.html" class="nav-link"
+                >♻️ Pontos de Coleta</a
+              >
+            </li>
+            <li><a href="exames.html" class="nav-link">📅 Exames</a></li>
+            <li>
+              <a href="atividades.html" class="nav-link">🏃 Atividades</a>
+            </li>
+            <li>
+              <a href="saude-mental.html" class="nav-link">❤️ Saúde Mental</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p class="sidebar-footer-text">
+            Cuidando da sua saúde e do meio ambiente
+          </p>
+          <div class="sidebar-status">
+            <span class="status-dot"></span>
+            <span>Sistema online</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-wrapper">
+        <main class="main-content">
+          <div class="dashboard">
+            <div class="dashboard-header">
+              <h1>Dashboard de Saúde</h1>
+              <p>
+                Acompanhe o impacto do Health On Time na saúde e
+                sustentabilidade
+              </p>
+            </div>
+
+            <div class="kpis-grid">
+              <div class="kpi-card">
+                <div class="kpi-header">
+                  <div
+                    class="kpi-icon"
+                    style="background: rgba(37, 99, 235, 0.15); color: #2563eb"
+                  >
+                    ❤️
+                  </div>
+                  <div class="kpi-trend">📈 +12% esta semana</div>
+                </div>
+                <div class="kpi-content">
+                  <h3>2</h3>
+                  <p class="kpi-label">Consultas Realizadas</p>
+                  <p class="kpi-subtitle">Total de atendimentos</p>
+                </div>
+              </div>
+
+              <div class="kpi-card">
+                <div class="kpi-header">
+                  <div
+                    class="kpi-icon"
+                    style="background: rgba(16, 185, 129, 0.15); color: #10b981"
+                  >
+                    👥
+                  </div>
+                  <div class="kpi-trend">📈 +8% este mês</div>
+                </div>
+                <div class="kpi-content">
+                  <h3>89</h3>
+                  <p class="kpi-label">Usuários Ativos</p>
+                  <p class="kpi-subtitle">Usuários únicos</p>
+                </div>
+              </div>
+
+              <div class="kpi-card">
+                <div class="kpi-header">
+                  <div
+                    class="kpi-icon"
+                    style="background: rgba(16, 185, 129, 0.15); color: #10b981"
+                  >
+                    ♻️
+                  </div>
+                  <div class="kpi-trend">📈 +23% este mês</div>
+                </div>
+                <div class="kpi-content">
+                  <h3>15.7kg</h3>
+                  <p class="kpi-label">Medicamentos Descartados</p>
+                  <p class="kpi-subtitle">Descarte correto</p>
+                </div>
+              </div>
+
+              <div class="kpi-card">
+                <div class="kpi-header">
+                  <div
+                    class="kpi-icon"
+                    style="background: rgba(14, 165, 233, 0.15); color: #0ea5e9"
+                  >
+                    🚗
+                  </div>
+                  <div class="kpi-trend">📈 +15% esta semana</div>
+                </div>
+                <div class="kpi-content">
+                  <h3>34</h3>
+                  <p class="kpi-label">Deslocamentos Evitados</p>
+                  <p class="kpi-subtitle">Impacto ambiental</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="quick-actions">
+              <h2 class="section-title">Acesso Rápido</h2>
+              <div class="actions-grid">
+                <a href="exames.html" class="action-card">
+                  <div
+                    class="action-icon"
+                    style="background: rgba(37, 99, 235, 0.15); color: #2563eb"
+                  >
+                    📅
+                  </div>
+                  <h3>Gerenciar Exames</h3>
+                  <p>Adicione e acompanhe seus exames preventivos</p>
+                </a>
+
+                <a href="informacoes.html" class="action-card">
+                  <div
+                    class="action-icon"
+                    style="background: rgba(16, 185, 129, 0.15); color: #10b981"
+                  >
+                    📖
+                  </div>
+                  <h3>Informações</h3>
+                  <p>Acesse informações sobre saúde masculina</p>
+                </a>
+
+                <a href="atividades.html" class="action-card">
+                  <div
+                    class="action-icon"
+                    style="background: rgba(249, 115, 22, 0.15); color: #f97316"
+                  >
+                    🏃
+                  </div>
+                  <h3>Atividades</h3>
+                  <p>Registre suas atividades físicas</p>
+                </a>
+
+                <a href="saude-mental.html" class="action-card">
+                  <div
+                    class="action-icon"
+                    style="background: rgba(14, 165, 233, 0.15); color: #0ea5e9"
+                  >
+                    ❤️
+                  </div>
+                  <h3>Saúde Mental</h3>
+                  <p>Espaço seguro para diálogo</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("sidebar-open");
+      }
+    </script>
+  </body>
+</html>

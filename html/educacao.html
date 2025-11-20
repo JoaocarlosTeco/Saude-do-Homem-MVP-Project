@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Educação em Saúde - Health On Time</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <div class="logo-icon-wrapper">
+              <img src="logo.png" alt="Logo" class="logo-image" />
+            </div>
+            <div class="logo-text">
+              <h1>Health On Time</h1>
+              <p class="logo-subtitle">Saúde Preventiva</p>
+            </div>
+          </div>
+          <button
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            onclick="toggleSidebar()"
+          >
+            ☰
+          </button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">🏠 Dashboard</a></li>
+            <li><a href="chat.html" class="nav-link">💬 Chat Saúde</a></li>
+            <li><a href="localizar.html" class="nav-link">📍 Localizar</a></li>
+            <li>
+              <a href="educacao.html" class="nav-link active">📚 Educação</a>
+            </li>
+            <li>
+              <a href="pontos-coleta.html" class="nav-link"
+                >♻️ Pontos de Coleta</a
+              >
+            </li>
+            <li><a href="exames.html" class="nav-link">📅 Exames</a></li>
+            <li>
+              <a href="atividades.html" class="nav-link">🏃 Atividades</a>
+            </li>
+            <li>
+              <a href="saude-mental.html" class="nav-link">❤️ Saúde Mental</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p class="sidebar-footer-text">
+            Cuidando da sua saúde e do meio ambiente
+          </p>
+          <div class="sidebar-status">
+            <span class="status-dot"></span>
+            <span>Sistema online</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-wrapper">
+        <main class="main-content">
+          <div class="educacao-page">
+            <div class="educacao-header">
+              <h1>Educação em Saúde</h1>
+              <p>
+                Dicas e orientações para uma vida mais saudável e sustentável
+              </p>
+            </div>
+
+            <div class="search-section">
+              <div class="search-wrapper">
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="Buscar dicas de saúde..."
+                  id="searchInput"
+                  onkeyup="filterDicas()"
+                />
+              </div>
+            </div>
+
+            <div class="categories-section">
+              <button
+                class="category-button active"
+                onclick="filterByCategory('todas')"
+              >
+                Todas
+              </button>
+              <button
+                class="category-button"
+                onclick="filterByCategory('nutricao')"
+              >
+                🍎 Nutrição
+              </button>
+              <button
+                class="category-button"
+                onclick="filterByCategory('exercicio')"
+              >
+                🏃 Exercício
+              </button>
+              <button
+                class="category-button"
+                onclick="filterByCategory('sono')"
+              >
+                🌙 Sono
+              </button>
+              <button
+                class="category-button"
+                onclick="filterByCategory('mental')"
+              >
+                🧠 Mental
+              </button>
+              <button
+                class="category-button"
+                onclick="filterByCategory('prevencao')"
+              >
+                ❤️ Prevenção
+              </button>
+              <button
+                class="category-button"
+                onclick="filterByCategory('sustentavel')"
+              >
+                🌱 Sustentável
+              </button>
+            </div>
+
+            <div class="dicas-grid" id="dicasGrid">
+              <div class="dica-card" data-categoria="nutricao">
+                <div class="dica-header">
+                  <div class="dica-icon-wrapper">🍎</div>
+                  <h3>Beba água regularmente</h3>
+                </div>
+                <div class="dica-tags">
+                  <span class="dica-tag">nutricao</span>
+                  <span class="dica-tag">geral</span>
+                  <span class="dica-tag">Sustentável</span>
+                </div>
+                <p class="dica-texto">
+                  Mantenha-se hidratado bebendo pelo menos 8 copos de água por
+                  dia. A água ajuda na digestão, regula a temperatura corporal e
+                  mantém a pele saudável. Use garrafas reutilizáveis para
+                  reduzir o impacto ambiental.
+                </p>
+                <div class="dica-data">📅 20/09/2025</div>
+              </div>
+
+              <div class="dica-card" data-categoria="exercicio">
+                <div class="dica-header">
+                  <div class="dica-icon-wrapper">🏃</div>
+                  <h3>30 minutos de exercício diário</h3>
+                </div>
+                <div class="dica-tags">
+                  <span class="dica-tag">exercicio</span>
+                  <span class="dica-tag">adultos</span>
+                  <span class="dica-tag">Sustentável</span>
+                </div>
+                <p class="dica-texto">
+                  Pratique pelo menos 30 minutos de atividade física moderada
+                  por dia. Pode ser uma caminhada, ciclismo ou exercícios em
+                  casa. Opte por modalidades ao ar livre quando possível para
+                  conectar-se com a natureza.
+                </p>
+                <div class="dica-data">📅 20/09/2025</div>
+              </div>
+
+              <div class="dica-card" data-categoria="sono">
+                <div class="dica-header">
+                  <div class="dica-icon-wrapper">🌙</div>
+                  <h3>Durma de 7-9 horas por noite</h3>
+                </div>
+                <div class="dica-tags">
+                  <span class="dica-tag">sono</span>
+                  <span class="dica-tag">geral</span>
+                  <span class="dica-tag">Sustentável</span>
+                </div>
+                <p class="dica-texto">
+                  O sono adequado é fundamental para a recuperação do corpo e
+                  mente. Mantenha horários regulares, evite telas antes de
+                  dormir e crie um ambiente tranquilo e escuro no quarto.
+                </p>
+                <div class="dica-data">📅 20/09/2025</div>
+              </div>
+
+              <div class="dica-card" data-categoria="nutricao">
+                <div class="dica-header">
+                  <div class="dica-icon-wrapper">🍎</div>
+                  <h3>Consuma alimentos locais e sazonais</h3>
+                </div>
+                <div class="dica-tags">
+                  <span class="dica-tag">nutricao</span>
+                  <span class="dica-tag">geral</span>
+                  <span class="dica-tag">Sustentável</span>
+                </div>
+                <p class="dica-texto">
+                  Prefira frutas e vegetais da estação e produzidos localmente.
+                  Além de serem mais nutritivos e saborosos, reduzem a pegada de
+                  carbono e apoiam a economia local.
+                </p>
+              </div>
+
+              <div class="dica-card" data-categoria="mental">
+                <div class="dica-header">
+                  <div class="dica-icon-wrapper">🧠</div>
+                  <h3>Pratique meditação e mindfulness</h3>
+                </div>
+                <div class="dica-tags">
+                  <span class="dica-tag">mental</span>
+                  <span class="dica-tag">geral</span>
+                </div>
+                <p class="dica-texto">
+                  Reserve 10-15 minutos diários para meditar ou praticar
+                  mindfulness. Isso reduz o estresse, melhora a concentração e
+                  promove bem-estar mental geral.
+                </p>
+              </div>
+
+              <div class="dica-card" data-categoria="sustentavel">
+                <div class="dica-header">
+                  <div class="dica-icon-wrapper">🌱</div>
+                  <h3>Descarte medicamentos corretamente</h3>
+                </div>
+                <div class="dica-tags">
+                  <span class="dica-tag">sustentabilidade</span>
+                  <span class="dica-tag">geral</span>
+                  <span class="dica-tag">Sustentável</span>
+                </div>
+                <p class="dica-texto">
+                  Nunca jogue medicamentos no lixo comum ou no vaso sanitário.
+                  Use os pontos de coleta adequados para proteger o meio
+                  ambiente e a saúde pública.
+                </p>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("sidebar-open");
+      }
+
+      let currentCategory = "todas";
+
+      function filterByCategory(categoria) {
+        currentCategory = categoria;
+        const buttons = document.querySelectorAll(".category-button");
+        buttons.forEach((btn) => btn.classList.remove("active"));
+        event.target.classList.add("active");
+        filterDicas();
+      }
+
+      function filterDicas() {
+        const searchTerm = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const cards = document.querySelectorAll(".dica-card");
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+          const categoria = card.getAttribute("data-categoria");
+          const titulo = card.querySelector("h3").textContent.toLowerCase();
+          const texto = card
+            .querySelector(".dica-texto")
+            .textContent.toLowerCase();
+
+          const matchCategory =
+            currentCategory === "todas" || categoria === currentCategory;
+          const matchSearch =
+            titulo.includes(searchTerm) || texto.includes(searchTerm);
+
+          if (matchCategory && matchSearch) {
+            card.style.display = "flex";
+            visibleCount++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        // Mostrar mensagem se não houver resultados
+        let emptyState = document.getElementById("emptyState");
+        if (visibleCount === 0) {
+          if (!emptyState) {
+            emptyState = document.createElement("div");
+            emptyState.id = "emptyState";
+            emptyState.className = "empty-state";
+            emptyState.innerHTML =
+              "<h3>Nenhuma dica encontrada</h3><p>Tente ajustar a categoria ou termo de busca</p>";
+            document.getElementById("dicasGrid").appendChild(emptyState);
+          }
+          emptyState.style.display = "block";
+        } else {
+          if (emptyState) emptyState.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

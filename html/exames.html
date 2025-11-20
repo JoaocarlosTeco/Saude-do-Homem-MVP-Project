@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exames - Health On Time</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="logo.png" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo">
+            <div class="logo-icon-wrapper">
+              <img src="logo.png" alt="Logo" class="logo-image" />
+            </div>
+            <div class="logo-text">
+              <h1>Health On Time</h1>
+              <p class="logo-subtitle">Saúde Preventiva</p>
+            </div>
+          </div>
+          <button
+            class="sidebar-toggle"
+            id="sidebarToggle"
+            onclick="toggleSidebar()"
+          >
+            ☰
+          </button>
+        </div>
+
+        <nav class="sidebar-nav">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">🏠 Dashboard</a></li>
+            <li><a href="chat.html" class="nav-link">💬 Chat Saúde</a></li>
+            <li><a href="localizar.html" class="nav-link">📍 Localizar</a></li>
+            <li><a href="educacao.html" class="nav-link">📚 Educação</a></li>
+            <li>
+              <a href="pontos-coleta.html" class="nav-link"
+                >♻️ Pontos de Coleta</a
+              >
+            </li>
+            <li><a href="exames.html" class="nav-link active">📅 Exames</a></li>
+            <li>
+              <a href="atividades.html" class="nav-link">🏃 Atividades</a>
+            </li>
+            <li>
+              <a href="saude-mental.html" class="nav-link">❤️ Saúde Mental</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p class="sidebar-footer-text">
+            Cuidando da sua saúde e do meio ambiente
+          </p>
+          <div class="sidebar-status">
+            <span class="status-dot"></span>
+            <span>Sistema online</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-wrapper">
+        <main class="main-content">
+          <div class="exames-page">
+            <div class="page-header">
+              <h1>Gerenciamento de Exames</h1>
+              <p>
+                Mantenha seus exames preventivos organizados e receba lembretes
+              </p>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h2>Adicionar Novo Exame</h2>
+                <button class="btn btn-primary" onclick="toggleForm()">
+                  ➕ Novo Exame
+                </button>
+              </div>
+
+              <form
+                id="exameForm"
+                class="exame-form"
+                style="display: none"
+                onsubmit="handleSubmit(event)"
+              >
+                <div class="form-group">
+                  <label class="label">Nome do Exame *</label>
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="Ex: Exame de sangue, PSA, etc."
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="label">Tipo de Exame</label>
+                  <input
+                    type="text"
+                    class="input"
+                    placeholder="Ex: Preventivo, Rotina, Especializado"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label class="label">Data do Exame *</label>
+                  <input type="date" class="input" required />
+                </div>
+
+                <div class="form-group">
+                  <label class="label">Observações</label>
+                  <textarea
+                    class="input"
+                    rows="3"
+                    placeholder="Informações adicionais sobre o exame..."
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                  Salvar Exame
+                </button>
+              </form>
+            </div>
+
+            <div class="card">
+              <h2 class="card-title">📅 Exames Pendentes</h2>
+              <p style="color: var(--text-secondary)">
+                Nenhum exame pendente no momento.
+              </p>
+            </div>
+
+            <div class="card">
+              <h2 class="card-title">✅ Exames Realizados</h2>
+              <p style="color: var(--text-secondary)">
+                Nenhum exame realizado ainda.
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("sidebar-open");
+      }
+
+      function toggleForm() {
+        const form = document.getElementById("exameForm");
+        form.style.display = form.style.display === "none" ? "block" : "none";
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        alert(
+          "Exame salvo com sucesso! (Funcionalidade de salvamento será implementada)"
+        );
+        document.getElementById("exameForm").reset();
+        document.getElementById("exameForm").style.display = "none";
+      }
+    </script>
+  </body>
+</html>
